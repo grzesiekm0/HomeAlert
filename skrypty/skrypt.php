@@ -21,7 +21,8 @@ $i = 0;
 
 $info['tytul']	= " ";
 
-$wia['tresc'];
+$des["description"] = "";
+$cars = array();
 
 while ($info['tytul'] != "") {
 	$info['tytul']	= $html->find(".stre1vda-tre1vda-title",$i)->innertext;
@@ -29,8 +30,11 @@ while ($info['tytul'] != "") {
 	$info['cena']	= $html->find(".stre1vda-tre1vda-title",$i)->parent()->parent()->parent()->children(1)->children(0)->children(0)->children(3)->innertext;
 	$info['tel']	= $html->find(".stre1vda-tre1vda-title",$i)->parent()->parent()->parent()->children(2)->children(0)->children(0)->children(2)->innertext;
 	$i ++;
+	//$des["description"] =+ $info;
     print_r($info);
+	array_push($cars, $info);
 }
+
 print_r($info['tytul']);
 //echo $html;
 ?>
