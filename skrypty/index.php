@@ -17,12 +17,13 @@
 
 $sql = "SELECT home_data_id, description FROM home_data";
 $result = $conn->query($sql);
-
+$baz = array();
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "id: " . $row["home_data_id"]. " - Name: " . $row["description"]. "<br>";
-    }
+		array_push($baz, $row);
+	}
 } else {
     echo "0 results";
 }
